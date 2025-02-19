@@ -135,9 +135,9 @@ const styles = StyleSheet.create({
     marginBottom: 12,
   },
   avatar: {
-    width: 80,
-    height: 80,
-    borderRadius: 40, 
+    width: 90,
+    height: 90,
+    borderRadius: 45, 
     marginRight: 16,
   },
   profileInfo: {
