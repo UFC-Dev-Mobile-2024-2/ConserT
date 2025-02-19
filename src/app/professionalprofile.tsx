@@ -144,8 +144,9 @@ const styles = StyleSheet.create({
     flexDirection: 'column',
   },
   name: {
-    fontSize: 26,
+    fontSize: 24,
     fontWeight: 'bold',
+    color: '#000',
   },
   rating: {
     fontSize: 23,
