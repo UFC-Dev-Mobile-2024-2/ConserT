@@ -242,7 +242,7 @@ const styles = StyleSheet.create({
   hireButtonText: {
     color: '#fff',
     fontWeight: 'bold',
-    fontSize: 26,
+    fontSize: 22,
   },
   footerIcon: {
     width: 25,  // Ajuste se necessário para uma proporção melhor
