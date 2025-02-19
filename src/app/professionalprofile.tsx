@@ -124,7 +124,7 @@ const styles = StyleSheet.create({
     fontSize: 24,
   },
   profileCard: {
-    backgroundColor: '#D3D3D3',
+    backgroundColor: '#E0E0E0',
     margin: 16,
     borderRadius: 16,
     padding: 16,
