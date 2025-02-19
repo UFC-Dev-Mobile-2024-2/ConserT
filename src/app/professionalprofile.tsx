@@ -132,7 +132,7 @@ const styles = StyleSheet.create({
   profileTop: {
     flexDirection: 'row',
     alignItems: 'center',
-    marginBottom: 10,
+    marginBottom: 12,
   },
   avatar: {
     width: 80,
