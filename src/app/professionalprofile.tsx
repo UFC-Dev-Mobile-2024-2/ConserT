@@ -109,7 +109,7 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
     paddingHorizontal: 16,
     paddingVertical: 12,
-    backgroundColor: '#fff',
+    backgroundColor: '#E65100',
   },
   backButton: {
     justifyContent: 'center',
@@ -124,7 +124,7 @@ const styles = StyleSheet.create({
     fontSize: 24,
   },
   profileCard: {
-    backgroundColor: '#D3D3D3',
+    backgroundColor: '#E0E0E0',
     margin: 16,
     borderRadius: 16,
     padding: 16,
@@ -132,20 +132,21 @@ const styles = StyleSheet.create({
   profileTop: {
     flexDirection: 'row',
     alignItems: 'center',
-    marginBottom: 10,
+    marginBottom: 12,
   },
   avatar: {
-    width: 80,
-    height: 80,
-    borderRadius: 40, 
+    width: 90,
+    height: 90,
+    borderRadius: 45, 
     marginRight: 16,
   },
   profileInfo: {
     flexDirection: 'column',
   },
   name: {
-    fontSize: 26,
+    fontSize: 24,
     fontWeight: 'bold',
+    color: '#000',
   },
   rating: {
     fontSize: 23,
@@ -243,7 +244,7 @@ const styles = StyleSheet.create({
   hireButtonText: {
     color: '#fff',
     fontWeight: 'bold',
-    fontSize: 26,
+    fontSize: 22,
   },
   footerIcon: {
     width: 25,  // Ajuste se necessário para uma proporção melhor
