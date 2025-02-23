@@ -187,6 +187,7 @@ const styles = StyleSheet.create({
   socialButtonWhatsapp: {
     backgroundColor: '#25D366',
     paddingVertical: 20,
+    paddingHorizontal:5,
     borderRadius: 30,
     marginTop: 10,
     alignItems: 'center',
