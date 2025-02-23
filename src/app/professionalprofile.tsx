@@ -1,4 +1,4 @@
-import { View, Text, StyleSheet, TouchableOpacity, Image } from 'react-native';
+import { View, Text, StyleSheet, TouchableOpacity, Image, ScrollView } from 'react-native';
 
 const ProfessionalProfile = () => {
   return (
@@ -15,6 +15,16 @@ const ProfessionalProfile = () => {
           <Image source={require('../assets/profile-icon.png')} style={styles.profileIcon} />
         </TouchableOpacity>
       </View>
+
+
+   <ScrollView style={styles.scrollContent}>
+     <View style= {styles.profileCard}>
+      <Image source={require('../assets/julio.png')} style={styles.avatar} />
+      <Text style= {styles.name}>Julio Cavalcante</Text>
+      <Text style={styles.rating}>★★★★★</Text>
+      <Text style={styles.location}>Quixadá – CE</Text>
+     </View>
+   </ScrollView>
     </View>
   );
 }
@@ -49,6 +59,31 @@ const styles = StyleSheet.create({
   profileIcon: {
     height: 50,
     width: 50,
+  },
+  profileCard: {
+    backgroundColor: '#E0E0E0',
+    margin: 16,
+    borderRadius: 16,
+    padding: 16,
+    alignItems: 'center',
+  },
+  avatar: {
+    width: 90,
+    height: 90,
+    borderRadius: 45,
+    marginBottom: 10,
+  },
+  name: {
+    fontSize: 24,
+    fontWeight: 'bold',
+  },
+  rating: {
+    fontSize: 20,
+    marginVertical: 4,
+  },
+  location: {
+    fontSize: 18,
+    fontWeight: 'bold',
   },
 });
 
