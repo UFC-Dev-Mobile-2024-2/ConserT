@@ -1,5 +1,11 @@
 
-import { View, Text, StyleSheet, TouchableOpacity, ScrollView, Image } from 'react-native';
+import React from 'react';
+import { View, ScrollView } from 'react-native';
+import { AppBar, Toolbar, IconButton, Typography, Avatar, Button, Card, CardContent, CardActions } from '@mui/material';
+import ArrowBackIcon from '@mui/icons-material/ArrowBack';
+import WhatsAppIcon from '@mui/icons-material/WhatsApp';
+import FacebookIcon from '@mui/icons-material/Facebook';
+import InstagramIcon from '@mui/icons-material/Instagram';
 
 const ProfessionalProfile = () => {
   return (
@@ -17,28 +23,24 @@ const ProfessionalProfile = () => {
           </TouchableOpacity>
         </View>
 
-        {/* Profile Section */}
-        <View style={styles.profileCard}>
-          <View style={styles.profileTop}>
-            <Image source={require('../assets/julio.png')} 
-              style={styles.avatar}
-            />
-            <View style={styles.profileInfo}>
-              <Text style={styles.name}>Júlio Cavalcante</Text>
-              <Text style={styles.rating}>★★★★★</Text>
-            </View>
-          </View>
-
-          <Text style={styles.location}>Quixadá – CE</Text>
-          <Text style={styles.address}><Text style={styles.bold}>Endereço:</Text> Rua José Maria 123</Text>
-
-          <Text style={styles.experience}>
-            <Text style={styles.bold}>Experiência:</Text> 8 anos de experiência no setor de reparos eletrônicos. 
-            Especialidades: Reparos de smartphones, tablets, notebooks, TVs de LED, LCD e Smart TVs.
-          </Text>
-          <Text style={styles.formation}>
-            <Text style={styles.bold}>Formação:</Text> Curso Técnico em Eletrônica pelo SENAI.
-          </Text>
+        <ScrollView contentContainerStyle={styles.scrollView}>
+        <Card sx={styles.card}>
+          <Avatar src="../assets/avatar.png" sx={styles.avatar} />
+          <CardContent>
+            <Typography variant="h6">Júlio Cavalcante</Typography>
+            <Typography variant="body2" color="text.secondary">Quixadá - CE</Typography>
+            <Typography variant="body2" color="text.secondary">Endereço: Rua José Maria 183</Typography>
+            <Typography variant="body2" color="text.secondary" paragraph>
+              Experiência: 8 anos de experiência no setor de manutenção. Reparação de eletrônicos, tablets, notebooks,
+              TVs de LED, LCD e Smart TVs. Certificado pelo SENAI.
+            </Typography>
+          </CardContent>
+          <CardActions sx={styles.cardActions}>
+            <IconButton color="primary"><WhatsAppIcon /></IconButton>
+            <IconButton color="primary"><FacebookIcon /></IconButton>
+            <IconButton color="primary"><InstagramIcon /></IconButton>
+          </CardActions>
+        </Card>
 
           {/* Ícones de Serviços */}
           <View style={styles.serviceIcons}>
@@ -96,22 +98,28 @@ const ProfessionalProfile = () => {
   );
 }
 
-const styles = StyleSheet.create({
+const styles = {
   container: {
     flex: 1,
-    backgroundColor: '#f2f2f2',
+    backgroundColor: '#f5f5f5',
   },
   scrollContent: {
     flex: 1,
     paddingBottom: 200,
   },
   header: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    paddingHorizontal: 16,
-    paddingVertical: 12,
-    backgroundColor: '#E65100',
-  },
+      position: 'absolute',
+      top: 0,
+      left: 0,
+      right: 0,
+      zIndex: 10,
+      flexDirection: 'row',
+      justifyContent: 'space-between',
+      alignItems: 'center',
+      height: 60,
+      paddingHorizontal: 10,
+      backgroundColor: '#e9501a',
+    },
   backButton: {
     justifyContent: 'center',
   },
