@@ -1,4 +1,6 @@
 import { View, Text, StyleSheet, TouchableOpacity, Image, ScrollView } from 'react-native';
+import { MaterialIcons } from "@expo/vector-icons";
+
 
 const ProfessionalProfile = () => {
   return (
@@ -23,10 +25,17 @@ const ProfessionalProfile = () => {
       <Text style= {styles.name}>Julio Cavalcante</Text>
       <Text style={styles.rating}>★★★★★</Text>
       <Text style={styles.location}>Quixadá – CE</Text>
+      
       <Text style={styles.address}><Text style={styles.bold}>Endereço:</Text> Rua José Maria 123</Text>
       <Text style={styles.experience}><Text style={styles.bold}>Experiência:</Text> 8 anos de experiência no setor de reparos eletrônicos. Especialidades: Reparos de smartphones, tablets, notebooks, TVs de LED, LCD e Smart TVs.</Text>
       <Text style={styles.formation}><Text style={styles.bold}>Formação:</Text> Curso Técnico em Eletrônica pelo SENAI.</Text>
-     </View>
+      
+      <View style={styles.serviceIcons}>
+       <View style={styles.serviceItem}><MaterialIcons name="ac-unit" size={24} /><Text style={styles.serviceText}>Freezers</Text></View>
+       <View style={styles.serviceItem}><MaterialIcons name="toys" size={24} /><Text style={styles.serviceText}>Ventiladores</Text></View>
+       <View style={styles.serviceItem}><MaterialIcons name="smartphone" size={24} /><Text style={styles.serviceText}>Smartphones</Text></View>
+      </View>
+    </View>
    </ScrollView>
     </View>
   );
@@ -102,6 +111,18 @@ const styles = StyleSheet.create({
     marginTop: 10,
     fontSize: 14,
     textAlign: 'center',
+  },
+  serviceIcons: {
+    flexDirection: 'row',
+    justifyContent: 'center',
+    marginVertical: 10,
+  },
+  serviceItem: {
+    alignItems: 'center',
+    marginHorizontal: 10,
+  },
+  serviceText: {
+    fontSize: 12,
   },
 });
 
