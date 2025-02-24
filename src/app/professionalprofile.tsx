@@ -23,12 +23,14 @@ const ProfessionalProfile = () => {
       <Text style= {styles.name}>Julio Cavalcante</Text>
       <Text style={styles.rating}>★★★★★</Text>
       <Text style={styles.location}>Quixadá – CE</Text>
+      <Text style={styles.address}><Text style={styles.bold}>Endereço:</Text> Rua José Maria 123</Text>
+      <Text style={styles.experience}><Text style={styles.bold}>Experiência:</Text> 8 anos de experiência no setor de reparos eletrônicos. Especialidades: Reparos de smartphones, tablets, notebooks, TVs de LED, LCD e Smart TVs.</Text>
+      <Text style={styles.formation}><Text style={styles.bold}>Formação:</Text> Curso Técnico em Eletrônica pelo SENAI.</Text>
      </View>
    </ScrollView>
     </View>
   );
 }
-
 const styles = StyleSheet.create({
   container: {
     flex: 1,
@@ -84,6 +86,22 @@ const styles = StyleSheet.create({
   location: {
     fontSize: 18,
     fontWeight: 'bold',
+  },
+  address: {
+    fontSize: 16,
+  },
+  bold: {
+    fontWeight: 'bold',
+  },
+  experience: {
+    marginTop: 10,
+    fontSize: 14,
+    textAlign: 'center',
+  },
+  formation: {
+    marginTop: 10,
+    fontSize: 14,
+    textAlign: 'center',
   },
 });
 
