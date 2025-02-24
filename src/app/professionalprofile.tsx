@@ -53,6 +53,10 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: '#f2f2f2',
   },
+  scrollContent: {
+    flexGrow: 1, 
+    paddingTop: 70, 
+  },
   header: {
     position: 'absolute',
     top: 0,
