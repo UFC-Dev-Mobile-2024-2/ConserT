@@ -35,6 +35,14 @@ const ProfessionalProfile = () => {
        <View style={styles.serviceItem}><MaterialIcons name="toys" size={24} /><Text style={styles.serviceText}>Ventiladores</Text></View>
        <View style={styles.serviceItem}><MaterialIcons name="smartphone" size={24} /><Text style={styles.serviceText}>Smartphones</Text></View>
       </View>
+
+      <TouchableOpacity style={styles.socialButtonWhatsapp}><Text style={styles.socialButtonText}>Whatsapp</Text></TouchableOpacity>
+      <TouchableOpacity style={styles.socialButtonFacebook}><Text style={styles.socialButtonText}>Facebook</Text></TouchableOpacity>
+      <TouchableOpacity style={styles.socialButtonInstagram}><Text style={styles.socialButtonText}>Instagram</Text></TouchableOpacity>
+
+      <TouchableOpacity style={styles.hireButton}><Text style={styles.hireButtonText}>Contratar</Text></TouchableOpacity>
+      <TouchableOpacity style={styles.reviewButton}><Text style={styles.hireButtonText}>Avaliações</Text></TouchableOpacity>
+    
     </View>
    </ScrollView>
     </View>
@@ -123,6 +131,55 @@ const styles = StyleSheet.create({
   },
   serviceText: {
     fontSize: 12,
+  },
+  socialButtonWhatsapp: {
+    backgroundColor: '#25D366',
+    paddingVertical: 10,
+    borderRadius: 8,
+    marginTop: 8,
+    alignItems: 'center',
+    width: '80%',
+  },
+  socialButtonFacebook: {
+    backgroundColor: '#3b5998',
+    paddingVertical: 10,
+    borderRadius: 8,
+    marginTop: 8,
+    alignItems: 'center',
+    width: '80%',
+  },
+  socialButtonInstagram: {
+    backgroundColor: '#C13584',
+    paddingVertical: 10,
+    borderRadius: 8,
+    marginTop: 8,
+    alignItems: 'center',
+    width: '80%',
+  },
+  socialButtonText: {
+    color: '#fff',
+    fontSize: 18,
+  },
+  hireButton: {
+    backgroundColor: '#E9501A',
+    borderRadius: 8,
+    paddingVertical: 12,
+    marginTop: 10,
+    width: '80%',
+    alignItems: 'center',
+  },
+  reviewButton: {
+    backgroundColor: '#FFA500',
+    borderRadius: 8,
+    paddingVertical: 12,
+    marginTop: 10,
+    width: '80%',
+    alignItems: 'center',
+  },
+  hireButtonText: {
+    color: '#fff',
+    fontSize: 18,
+    fontWeight: 'bold',
   },
 });
 
