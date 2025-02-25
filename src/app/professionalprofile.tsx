@@ -51,7 +51,7 @@ const ProfessionalProfile = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#f2f2f2',
+    backgroundColor: '#f5f5f5',
   },
   scrollContent: {
     flexGrow: 1, 
