@@ -51,7 +51,7 @@ const ProfessionalProfile = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#f5f5f5',
+    backgroundColor: '#f2f2f2',
   },
   scrollContent: {
     flexGrow: 1, 
@@ -137,7 +137,7 @@ const styles = StyleSheet.create({
     fontSize: 12,
   },
   socialButtonWhatsapp: {
-    backgroundColor: '#25D366',
+    backgroundColor: '#f5f5f5',
     paddingVertical: 10,
     borderRadius: 8,
     marginTop: 8,
@@ -145,7 +145,7 @@ const styles = StyleSheet.create({
     width: '80%',
   },
   socialButtonFacebook: {
-    backgroundColor: '#3b5998',
+    backgroundColor: '#f5f5f5',
     paddingVertical: 10,
     borderRadius: 8,
     marginTop: 8,
@@ -153,7 +153,7 @@ const styles = StyleSheet.create({
     width: '80%',
   },
   socialButtonInstagram: {
-    backgroundColor: '#C13584',
+    backgroundColor: '#f5f5f5',
     paddingVertical: 10,
     borderRadius: 8,
     marginTop: 8,
