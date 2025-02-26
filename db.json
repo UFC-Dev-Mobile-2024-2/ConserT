@@ -1,0 +1,9 @@
+{
+    "contas": [
+      {
+        "id": 1,
+        "username": "usuario01@gmail.com",
+        "senha": "abcdefg"
+      }
+    ]
+  }
