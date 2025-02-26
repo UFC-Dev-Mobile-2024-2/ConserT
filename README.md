@@ -1,5 +1,10 @@
-projeto 4 ufc
+Projeto de Interfaces para Dispositivos Móveis
 
--neuton junior
--lucas de castro
--hyago sousa
+Projeto ConserT
+
+Alunos:
+
+- Lucas de Castro Viana
+- David Natanael
+- Ariadne Coelho
+- Hyago Souza
