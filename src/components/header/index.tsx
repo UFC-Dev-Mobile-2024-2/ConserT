@@ -1,9 +1,11 @@
 import { View, Pressable, Text, Image } from 'react-native';
 import { Ionicons, Feather } from '@expo/vector-icons';
-
+import { useRouter } from 'expo-router';
 
 
 export function Header() {
+  const router = useRouter();
+
   return (
     <View className="w-full flex flex-row items-center justify-between px-3 -mt-14">
       
@@ -22,7 +24,9 @@ export function Header() {
 
         </View>
 
-      <Pressable className="w-20 h-20 rounded-full flex justify-center items-center border-4 border-minha-cor">
+      <Pressable className="w-20 h-20 rounded-full flex justify-center items-center border-4 border-minha-cor"
+        onPress={() => router.push('/loginscreen')}
+      >
         <Feather name="user" size={32} color="#0037AD" />
       </Pressable>
 

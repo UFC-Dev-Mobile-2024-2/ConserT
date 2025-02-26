@@ -1,14 +1,90 @@
-import { View, Text, StyleSheet, TouchableOpacity, Image, ScrollView } from 'react-native';
-import { MaterialIcons } from "@expo/vector-icons";
 
+import { View, Text, StyleSheet, TouchableOpacity, ScrollView, Image } from "react-native";
+import { useRouter } from "expo-router";
 
-const ProfessionalProfile = () => {
+export default function ProfessionalProfile() {
+  const router = useRouter();
+
   return (
     <View style={styles.container}>
-      {/* Header */}
-      <View style={styles.header}>
-        <TouchableOpacity style={styles.backButton}>
-          <Image source={require('../assets/arrow_back.png')} style={styles.backButton} />
+      {/* Conteúdo rolável */}
+      <ScrollView style={styles.scrollContent}>
+
+        {/* Header */}
+        <View style={styles.header}>
+          <TouchableOpacity style={styles.backButton}
+          onPress={() => router.back()}
+        >
+          <Text style={styles.backText}>{'<'}</Text>
+          </TouchableOpacity>
+          <TouchableOpacity style={styles.profileIcon}>
+            <Text style={styles.iconText}>{'👤'}</Text>
+          </TouchableOpacity>
+        </View>
+
+        {/* Profile Section */}
+        <View style={styles.profileCard}>
+          <View style={styles.profileTop}>
+            <Image source={require('../assets/julio.png')} 
+              style={styles.avatar}
+            />
+            <View style={styles.profileInfo}>
+              <Text style={styles.name}>Júlio Cavalcante</Text>
+              <Text style={styles.rating}>★★★★★</Text>
+            </View>
+          </View>
+
+          <Text style={styles.location}>Quixadá – CE</Text>
+          <Text style={styles.address}><Text style={styles.bold}>Endereço:</Text> Rua José Maria 123</Text>
+
+          <Text style={styles.experience}>
+            <Text style={styles.bold}>Experiência:</Text> 8 anos de experiência no setor de reparos eletrônicos. 
+            Especialidades: Reparos de smartphones, tablets, notebooks, TVs de LED, LCD e Smart TVs.
+          </Text>
+          <Text style={styles.formation}>
+            <Text style={styles.bold}>Formação:</Text> Curso Técnico em Eletrônica pelo SENAI.
+          </Text>
+
+          {/* Ícones de Serviços */}
+          <View style={styles.serviceIcons}>
+            <View style={styles.serviceItem}>
+              <Text>❄️</Text>
+              <Text style={styles.serviceText}>Freezers</Text>
+            </View>
+            <View style={styles.serviceItem}>
+              <Text>🌀</Text>
+              <Text style={styles.serviceText}>Ventiladores</Text>
+            </View>
+            <View style={styles.serviceItem}>
+              <Text>📱</Text>
+              <Text style={styles.serviceText}>Smartphones</Text>
+            </View>
+          </View>
+
+          {/* Botões de Redes Sociais */}
+          <TouchableOpacity style={styles.socialButtonWhatsapp}>
+            <Text style={styles.socialButtonText}>Whatsapp</Text>
+          </TouchableOpacity>
+          <TouchableOpacity style={styles.socialButtonFacebook}>
+            <Text style={styles.socialButtonText}>Facebook</Text>
+          </TouchableOpacity>
+          <TouchableOpacity style={styles.socialButtonInstagram}>
+            <Text style={styles.socialButtonText}>Instagram</Text>
+          </TouchableOpacity>
+
+
+
+          {/* Botão de contratar */}
+          <TouchableOpacity style={styles.hireButton}>
+            <Text style={styles.hireButtonText}>Contratar</Text>
+          </TouchableOpacity>
+        </View>
+      </ScrollView>
+
+      {/* Barra fixa na parte inferior */}
+      <View style={styles.footer}>
+        <TouchableOpacity style={styles.footerButton}>
+          <Image source={require('../assets/home.png')} style={styles.footerIcon} />
         </TouchableOpacity>
         <TouchableOpacity>
           <Image source={require('../assets/logo_blue.png')} style={styles.headerLogo} />
