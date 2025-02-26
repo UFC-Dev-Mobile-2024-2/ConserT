@@ -1,12 +1,18 @@
 import { View, Text, TextInput, Image, StyleSheet, TouchableOpacity } from 'react-native';
 import { FontAwesome } from '@expo/vector-icons';
+import { useRouter } from 'expo-router';
+import { Linking } from 'react-native';
 
 const SignupScreen: React.FC = () => {
+  const router = useRouter(); // Inicializa o useRouter
+
   return (
     <View style={styles.container}>
-      <TouchableOpacity style={styles.backButton}>
-        <FontAwesome name="arrow-left" size={24} color="black" />
+
+      <TouchableOpacity style={styles.backButton} onPress={() => router.push("/helloscreen")}>
+        <FontAwesome name="arrow-left" size={24} color="white" />
       </TouchableOpacity>
+
       <Image source={require('../assets/logo.png')} style={styles.logo} />
       <Text style={styles.title}>Cadastro</Text>
       <Text style={styles.subtitle}>Preencha os dados</Text>
@@ -26,33 +32,38 @@ const SignupScreen: React.FC = () => {
         <FontAwesome name="eye" size={20} color="black" style={styles.eyeIcon} />
       </View>
       
-      <TouchableOpacity style={styles.signupButton}>
+      <TouchableOpacity style={styles.signupButton} onPress={() => router.push("/loginscreen")}>
         <Text style={styles.buttonText}>Criar nova conta</Text>
       </TouchableOpacity>
       
       <Text style={styles.orText}>Ou cadastre-se com</Text>
       
-      <TouchableOpacity style={styles.socialButton}>
+      <TouchableOpacity style={styles.socialButton} onPress={() => Linking.openURL('https://www.facebook.com/?stype=lo&flo=1&deoia=1&jlou=Afefquq9xHx99tTvyA7-l3GBAHF6jNVN_Ryx4jMbb7AduQEmK6txneCVrBAk4kfWnoEZ7EDX8bA3BHHpJc8x93fiy8U5Mkcio_qVjmVPACVnmA&smuh=27579&lh=Ac_LMJPQJmLW56db32c')}>
         <Image source={require('../assets/facebook.png')} style={styles.socialIcon} />
         <Text style={styles.socialText}>Entrar com Facebook</Text>
       </TouchableOpacity>
       
-      <TouchableOpacity style={styles.socialButton}>
+      <TouchableOpacity style={styles.socialButton} onPress={() => Linking.openURL('https://accounts.google.com/InteractiveLogin/signinchooser?elo=1&ifkv=ASSHykqxqylYRuVyWBGkdBAVuQIfi2JZN6eG3vwgjrxPFC31wjfP6GN4A567se7NloYYEbLvsPhV&ddm=1&flowName=GlifWebSignIn&flowEntry=ServiceLogin')}>
         <Image source={require('../assets/google.png')} style={styles.socialIcon} />
         <Text style={styles.socialText}>Entrar com Google</Text>
       </TouchableOpacity>
       
-      <Text style={styles.footerText}>Já tem uma conta? <Text style={styles.loginText}>Faça login</Text></Text>
+      <Text style={styles.footerText}>Já possui uma conta?
+        <TouchableOpacity onPress={() => router.push("/loginscreen")}>
+          <Text style={styles.loginText}> Faça login</Text>
+        </TouchableOpacity>
+      </Text>
     </View>
   );
 };
+
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#F9F9F9',
+    backgroundColor: '#001F3F',
     padding: 20,
   },
   logo: {
@@ -68,17 +79,17 @@ const styles = StyleSheet.create({
   title: {
     fontSize: 28,
     fontWeight: 'bold',
-    color: '#000',
+    color: '#fff',
   },
   subtitle: {
     fontSize: 16,
-    color: '#555',
+    color: '#999',
     marginBottom: 20,
   },
   label: {
     alignSelf: 'flex-start',
     fontSize: 14,
-    color: '#000',
+    color: '#fff',
     marginBottom: 5,
   },
   input: {
@@ -117,7 +128,7 @@ const styles = StyleSheet.create({
   },
   orText: {
     fontSize: 14,
-    color: '#555',
+    color: '#999',
     marginVertical: 10,
   },
   socialButton: {
@@ -143,7 +154,7 @@ const styles = StyleSheet.create({
   },
   footerText: {
     fontSize: 14,
-    color: '#000',
+    color: '#fff',
     marginTop: 10,
   },
   loginText: {

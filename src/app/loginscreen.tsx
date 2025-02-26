@@ -1,22 +1,17 @@
 import { View, Text, TextInput, Image, StyleSheet, TouchableOpacity } from 'react-native';
 import { FontAwesome } from '@expo/vector-icons';
 import { useRouter } from 'expo-router';
-import { Link } from "expo-router";
-
-
+import { Linking } from 'react-native';
 
 const LoginScreen: React.FC = () => {
-  const router = useRouter();
-  
+  const router = useRouter(); // Inicializa o useRouter
+
   return (
     <View style={styles.container}>
-      <TouchableOpacity 
-        style={styles.backButton}
-        onPress={() => router.back()} 
-    >
-
-        <FontAwesome name="arrow-left" size={24} color="black" />
+      <TouchableOpacity style={styles.backButton} onPress={() => router.push("/helloscreen")}>
+        <FontAwesome name="arrow-left" size={24} color="white" />
       </TouchableOpacity>
+
       <Image source={require('../assets/logo.png')} style={styles.logo} />
       <Text style={styles.title}>Login</Text>
       <Text style={styles.subtitle}>Preencha os dados</Text>
@@ -35,29 +30,30 @@ const LoginScreen: React.FC = () => {
         <Text style={styles.rememberText}>Lembrar login</Text>
       </View>
       
-      <TouchableOpacity style={styles.loginButton}>
+      <TouchableOpacity style={styles.loginButton} onPress={() => router.push("/homepage")}>
         <Text style={styles.buttonText}>ENTRAR</Text>
       </TouchableOpacity>
       
       <Text style={styles.orText}>Ou realize o login com</Text>
       
-      <TouchableOpacity style={styles.socialButton}>
+      <TouchableOpacity style={styles.socialButton} onPress={() => Linking.openURL('https://www.facebook.com')}>
         <Image source={require('../assets/facebook.png')} style={styles.socialIcon} />
         <Text style={styles.socialText}>Entrar com Facebook</Text>
       </TouchableOpacity>
-      
-      <TouchableOpacity style={styles.socialButton}>
+            
+      <TouchableOpacity style={styles.socialButton} onPress={() => Linking.openURL('https://accounts.google.com')}>
         <Image source={require('../assets/google.png')} style={styles.socialIcon} />
         <Text style={styles.socialText}>Entrar com Google</Text>
       </TouchableOpacity>
       
       <Text style={styles.footerText}>
-        Não tem uma conta? 
-        <Link href="/signup" style={styles.signupText}>Cadastre-se</Link>  {/* Esse link leva à tela de cadastro */}
+        Não tem uma conta?
+        <Text style={styles.signupText} onPress={() => router.push("/signupscreen")}> Cadastre-se</Text>
       </Text>
     </View>
   );
 };
+
 
 const styles = StyleSheet.create({
   logo: {
@@ -69,7 +65,7 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#F9F9F9',
+    backgroundColor: '#001F3F',
     padding: 20,
   },
   backButton: {
@@ -80,17 +76,17 @@ const styles = StyleSheet.create({
   title: {
     fontSize: 28,
     fontWeight: 'bold',
-    color: '#000',
+    color: '#fff',
   },
   subtitle: {
     fontSize: 16,
-    color: '#555',
+    color: '#999',
     marginBottom: 20,
   },
   label: {
     alignSelf: 'flex-start',
     fontSize: 14,
-    color: '#000',
+    color: '#fff',
     marginBottom: 5,
   },
   input: {
@@ -120,12 +116,12 @@ const styles = StyleSheet.create({
     width: 20,
     height: 20,
     borderWidth: 1,
-    borderColor: '#000',
+    borderColor: '#fff',
     marginRight: 10,
   },
   rememberText: {
     fontSize: 14,
-    color: '#000',
+    color: '#fff',
   },
   loginButton: {
     backgroundColor: '#E65100',
@@ -141,7 +137,7 @@ const styles = StyleSheet.create({
   },
   orText: {
     fontSize: 14,
-    color: '#555',
+    color: '#999',
     marginVertical: 10,
   },
   socialButton: {
@@ -166,7 +162,7 @@ const styles = StyleSheet.create({
   },
   footerText: {
     fontSize: 14,
-    color: '#000',
+    color: '#fff',
     marginTop: 10,
   },
   signupText: {
