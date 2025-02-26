@@ -1,7 +1,11 @@
 import { View, Text, TextInput, Image, StyleSheet, TouchableOpacity } from 'react-native';
 import { FontAwesome } from '@expo/vector-icons';
+import { useRouter } from 'expo-router';
+
 
 const LoginScreen: React.FC = () => {
+  const router = useRouter();
+  
   return (
     <View style={styles.container}>
       <TouchableOpacity style={styles.backButton}>
@@ -42,6 +46,7 @@ const LoginScreen: React.FC = () => {
       </TouchableOpacity>
       
       <Text style={styles.footerText}>Não tem uma conta? <Text style={styles.signupText}>Cadastre-se</Text></Text>
+    
     </View>
   );
 };
