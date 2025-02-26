@@ -1,5 +1,4 @@
 
-import React from "react";
 import { View, Text, StyleSheet, TouchableOpacity, ScrollView, Image } from "react-native";
 import { useRouter } from "expo-router";
 
@@ -87,180 +86,181 @@ export default function ProfessionalProfile() {
         <TouchableOpacity style={styles.footerButton}>
           <Image source={require('../assets/home.png')} style={styles.footerIcon} />
         </TouchableOpacity>
-        <TouchableOpacity style={styles.footerButton}>
-          <Image source={require('../assets/message.png')} style={styles.footerIcon} />
+        <TouchableOpacity>
+          <Image source={require('../assets/logo_blue.png')} style={styles.headerLogo} />
         </TouchableOpacity>
-        <TouchableOpacity style={styles.footerButton}>
-          <Image source={require('../assets/star.png')} style={styles.footerIcon} />
+        <TouchableOpacity>
+          <Image source={require('../assets/profile-icon.png')} style={styles.profileIcon} />
         </TouchableOpacity>
-        <TouchableOpacity style={styles.footerButton}>
-          <Image source={require('../assets/pro.png')} style={styles.footerProIcon} />
-        </TouchableOpacity>
-        
       </View>
+
+
+   <ScrollView style={styles.scrollContent}>
+     <View style= {styles.profileCard}>
+      <Image source={require('../assets/julio.png')} style={styles.avatar} />
+      <Text style= {styles.name}>Julio Cavalcante</Text>
+      <Text style={styles.rating}>★★★★★</Text>
+      <Text style={styles.location}>Quixadá – CE</Text>
+      
+      <Text style={styles.address}><Text style={styles.bold}>Endereço:</Text> Rua José Maria 123</Text>
+      <Text style={styles.experience}><Text style={styles.bold}>Experiência:</Text> 8 anos de experiência no setor de reparos eletrônicos. Especialidades: Reparos de smartphones, tablets, notebooks, TVs de LED, LCD e Smart TVs.</Text>
+      <Text style={styles.formation}><Text style={styles.bold}>Formação:</Text> Curso Técnico em Eletrônica pelo SENAI.</Text>
+      
+      <View style={styles.serviceIcons}>
+       <View style={styles.serviceItem}><MaterialIcons name="ac-unit" size={24} /><Text style={styles.serviceText}>Freezers</Text></View>
+       <View style={styles.serviceItem}><MaterialIcons name="toys" size={24} /><Text style={styles.serviceText}>Ventiladores</Text></View>
+       <View style={styles.serviceItem}><MaterialIcons name="smartphone" size={24} /><Text style={styles.serviceText}>Smartphones</Text></View>
+      </View>
+
+      <TouchableOpacity style={styles.socialButtonWhatsapp}><Text style={styles.socialButtonText}>Whatsapp</Text></TouchableOpacity>
+      <TouchableOpacity style={styles.socialButtonFacebook}><Text style={styles.socialButtonText}>Facebook</Text></TouchableOpacity>
+      <TouchableOpacity style={styles.socialButtonInstagram}><Text style={styles.socialButtonText}>Instagram</Text></TouchableOpacity>
+
+      <TouchableOpacity style={styles.hireButton}><Text style={styles.hireButtonText}>Contratar</Text></TouchableOpacity>
+      <TouchableOpacity style={styles.reviewButton}><Text style={styles.hireButtonText}>Avaliações</Text></TouchableOpacity>
+    
+    </View>
+   </ScrollView>
     </View>
   );
 }
-
 const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#f2f2f2',
   },
   scrollContent: {
-    flex: 1,
-    paddingBottom: 200,
+    flexGrow: 1, 
+    paddingTop: 70, 
   },
   header: {
+    position: 'absolute',
+    top: 0,
+    left: 0,
+    right: 0,
+    zIndex: 10,
     flexDirection: 'row',
     justifyContent: 'space-between',
-    paddingHorizontal: 16,
-    paddingVertical: 12,
-    backgroundColor: '#E65100',
+    alignItems: 'center',
+    height: 60,
+    paddingHorizontal: 10,
+    backgroundColor: '#e9501a',
+  },
+  headerLogo: {
+    width: 120,
+    height: 40,
+    resizeMode: 'contain',
   },
   backButton: {
-    justifyContent: 'center',
-  },
-  backText: {
-    fontSize: 18,
+    height: 30,
+    width: 30,
   },
   profileIcon: {
-    justifyContent: 'center',
-  },
-  iconText: {
-    fontSize: 24,
+    height: 50,
+    width: 50,
   },
   profileCard: {
     backgroundColor: '#E0E0E0',
     margin: 16,
     borderRadius: 16,
     padding: 16,
-  },
-  profileTop: {
-    flexDirection: 'row',
     alignItems: 'center',
-    marginBottom: 12,
   },
   avatar: {
     width: 90,
     height: 90,
-    borderRadius: 45, 
-    marginRight: 16,
-  },
-  profileInfo: {
-    flexDirection: 'column',
+    borderRadius: 45,
+    marginBottom: 10,
   },
   name: {
     fontSize: 24,
     fontWeight: 'bold',
-    color: '#000',
   },
   rating: {
-    fontSize: 23,
-    color: '#000',
+    fontSize: 20,
+    marginVertical: 4,
   },
   location: {
-    fontSize: 20,
+    fontSize: 18,
     fontWeight: 'bold',
-    marginTop: 8,
   },
   address: {
-    fontSize: 18,
-    marginTop: 4,
+    fontSize: 16,
   },
   bold: {
     fontWeight: 'bold',
   },
   experience: {
-    marginTop: 16,
-    fontSize: 16,
+    marginTop: 10,
+    fontSize: 14,
+    textAlign: 'center',
   },
   formation: {
-    marginTop: 18,
-    fontSize: 16,
+    marginTop: 10,
+    fontSize: 14,
+    textAlign: 'center',
   },
   serviceIcons: {
     flexDirection: 'row',
-    justifyContent: 'space-around',
-    marginVertical: 16,
+    justifyContent: 'center',
+    marginVertical: 10,
   },
   serviceItem: {
     alignItems: 'center',
+    marginHorizontal: 10,
   },
   serviceText: {
     fontSize: 12,
   },
-
   socialButtonWhatsapp: {
-    backgroundColor: '#25D366',
-    paddingVertical: 20,
-    paddingHorizontal:5,
-    borderRadius: 30,
-    marginTop: 10,
+    backgroundColor: '#f5f5f5',
+    paddingVertical: 10,
+    borderRadius: 8,
+    marginTop: 8
     alignItems: 'center',
+    width: '80%',
   },
   socialButtonFacebook: {
-    backgroundColor: '#3b5998',
-    paddingVertical: 20,
-    marginTop: 10,
-    borderRadius: 30,
+    backgroundColor: '#f5f5f5',
+    paddingVertical: 10,
+    borderRadius: 8,
+    marginTop: 8,
     alignItems: 'center',
+    width: '80%',
   },
   socialButtonInstagram: {
-    backgroundColor: '#C13584',
-    paddingVertical: 20,
-    marginTop: 10,
-    borderRadius: 30,
+    backgroundColor: '#f5f5f5',
+    paddingVertical: 10,
+    borderRadius: 8,
+    marginTop: 8,
     alignItems: 'center',
+    width: '80%',
   },
   socialButtonText: {
     color: '#fff',
-    fontSize: 26,
-  },
-  footer: {
-    flexDirection: 'row',
-    justifyContent: 'center',
-    alignSelf: 'center',
-    gap: 20,
-    paddingHorizontal: 40,
-    paddingVertical: 25,
-    backgroundColor: '#0044CC', 
-    borderTopWidth: 1,
-    borderColor: '#ddd',
-    marginTop: 'auto',
-    bottom: 30, 
-    borderRadius: 50,
-    zIndex: 10,
-    width: '85%',
-  },
-  footerButton: {
-    flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
+    fontSize: 18,
   },
   hireButton: {
-    flex: 1,
     backgroundColor: '#E9501A',
-    borderRadius: 30,
+    borderRadius: 8,
+    paddingVertical: 12,
+    marginTop: 10,
+    width: '80%',
     alignItems: 'center',
-    justifyContent: 'center',
-    paddingVertical: 20,
-    marginTop: 20,
-    height: 100,
+  },
+  reviewButton: {
+    backgroundColor: '#FFA500',
+    borderRadius: 8,
+    paddingVertical: 12,
+    marginTop: 10,
+    width: '80%',
+    alignItems: 'center',
   },
   hireButtonText: {
     color: '#fff',
+    fontSize: 18,
     fontWeight: 'bold',
-    fontSize: 22,
-  },
-  footerIcon: {
-    width: 25,  // Ajuste se necessário para uma proporção melhor
-    height: 25,
-    resizeMode: 'contain',
-},
-  footerProIcon: {
-      width: 50, 
-      height: 30,
-      resizeMode: 'contain',
   },
 });
+
+export default ProfessionalProfile;
