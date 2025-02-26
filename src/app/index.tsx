@@ -18,7 +18,9 @@ const Index = () => {
       </View>
       
       <View style={styles.cardsContainer}>
-        <ProfileCard name="Romero Brito" image={require("../assets/Rectangle.png")} rating={2} />
+        <Link href="/professionalprofile" style={styles.cardLink}>
+          <ProfileCard name="Romero Brito" image={require("../assets/Rectangle.png")} rating={2} />
+        </Link>
         <ProfileCard name="Júlio Cavalcante" image={require("../assets/Rectangle.png")} rating={4} />
         <ProfileCard name="Peter Parker" image={require("../assets/Rectangle.png")} rating={5} />
         <ProfileCard name="Raimundo Nonato" image={require("../assets/Rectangle.png")} rating={4} />

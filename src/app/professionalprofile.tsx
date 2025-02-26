@@ -1,15 +1,22 @@
 
-import { View, Text, StyleSheet, TouchableOpacity, ScrollView, Image } from 'react-native';
+import React from "react";
+import { View, Text, StyleSheet, TouchableOpacity, ScrollView, Image } from "react-native";
+import { useRouter } from "expo-router";
 
 export default function ProfessionalProfile() {
+  const router = useRouter();
+
   return (
     <View style={styles.container}>
       {/* Conteúdo rolável */}
       <ScrollView style={styles.scrollContent}>
+
         {/* Header */}
         <View style={styles.header}>
-          <TouchableOpacity style={styles.backButton}>
-            <Text style={styles.backText}>{'<'}</Text>
+          <TouchableOpacity style={styles.backButton}
+          onPress={() => router.back()}
+        >
+          <Text style={styles.backText}>{'<'}</Text>
           </TouchableOpacity>
           <TouchableOpacity style={styles.profileIcon}>
             <Text style={styles.iconText}>{'👤'}</Text>

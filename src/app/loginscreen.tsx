@@ -1,6 +1,8 @@
 import { View, Text, TextInput, Image, StyleSheet, TouchableOpacity } from 'react-native';
 import { FontAwesome } from '@expo/vector-icons';
 import { useRouter } from 'expo-router';
+import { Link } from "expo-router";
+
 
 
 const LoginScreen: React.FC = () => {
@@ -8,7 +10,11 @@ const LoginScreen: React.FC = () => {
   
   return (
     <View style={styles.container}>
-      <TouchableOpacity style={styles.backButton}>
+      <TouchableOpacity 
+        style={styles.backButton}
+        onPress={() => router.back()} 
+    >
+
         <FontAwesome name="arrow-left" size={24} color="black" />
       </TouchableOpacity>
       <Image source={require('../assets/logo.png')} style={styles.logo} />
@@ -45,8 +51,10 @@ const LoginScreen: React.FC = () => {
         <Text style={styles.socialText}>Entrar com Google</Text>
       </TouchableOpacity>
       
-      <Text style={styles.footerText}>Não tem uma conta? <Text style={styles.signupText}>Cadastre-se</Text></Text>
-    
+      <Text style={styles.footerText}>
+        Não tem uma conta? 
+        <Link href="/signup" style={styles.signupText}>Cadastre-se</Link>  {/* Esse link leva à tela de cadastro */}
+      </Text>
     </View>
   );
 };
