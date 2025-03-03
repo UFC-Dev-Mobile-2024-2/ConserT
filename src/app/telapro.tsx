@@ -1,16 +1,16 @@
 import { useState, useEffect } from "react";
 import { View, Text, StyleSheet, Image, TouchableOpacity } from "react-native";
-import * as Font from "expo-font"; // Importando a função para carregar fontes
-import { MaterialIcons } from "@expo/vector-icons"; // Importando o ícone de Material Icons
+import * as Font from "expo-font";
+import { MaterialIcons } from "@expo/vector-icons"; 
 import { useNavigation } from '@react-navigation/native';
 
 export default function PlanSubscription() {
-  const [fontsLoaded, setFontsLoaded] = useState(false); // Estado para saber se as fontes estão carregadas
+  const [fontsLoaded, setFontsLoaded] = useState(false);
   const navigation = useNavigation();
 
   useEffect(() => {
     const loadFonts = async () => {
-      // Carregando as fontes
+    
       await Font.loadAsync({
         "Funnel-Display": require("../assets/fonts/Funnel-Display.ttf"),
         "Sora-Regular": require("../assets/fonts/Sora-Regular.ttf"),
@@ -19,16 +19,11 @@ export default function PlanSubscription() {
     };
 
     loadFonts();
-  }, []); // O useEffect é chamado uma vez quando o componente é montado
+  }, []);
 
   if (!fontsLoaded) {
-    return null; // Renderiza nada enquanto as fontes estão sendo carregadas
+    return null; 
   }
-
-  const handleGoBack = () => {
-    // Lógica para voltar, como navegar para a tela anterior
-    console.log("Voltar");
-  };
 
   return (
     <View style={styles.container}>
@@ -82,16 +77,16 @@ const styles = StyleSheet.create({
   },
   backButton: {
     position: "absolute",
-    top: 40, // Ajusta a posição do botão no topo
-    left: 20, // Ajusta a distância da borda esquerda
+    top: 40,
+    left: 20,
     padding: 10,
     zIndex: 1,
   },
   title: {
     fontSize: 35,
     fontWeight: "bold",
-    marginBottom: 100, // Menos espaço abaixo
-    fontFamily: "Funnel-Display", // Fonte para o título
+    marginBottom: 100, 
+    fontFamily: "Funnel-Display", 
   },
   featureContainer: {
     width: "100%",
@@ -110,7 +105,7 @@ const styles = StyleSheet.create({
   },
   description: {
     fontSize: 22,
-    fontFamily: "Sora-Regular", // Fonte para as descrições
+    fontFamily: "Sora-Regular",
     color: "#333",
   },
   subscribeButton: {
@@ -124,7 +119,7 @@ const styles = StyleSheet.create({
     color: "#000",
     fontSize: 26,
     fontWeight: "bold",
-    fontFamily: "Funnel-Display", // Fonte para o texto do botão
+    fontFamily: "Funnel-Display",
   },
   planText: {
     color: "#E4552D",
