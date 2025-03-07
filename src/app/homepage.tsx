@@ -24,13 +24,13 @@ const HomePage = () => {
   const toggleDropdown = () => {
     setDropdownVisible(!isDropdownVisible);
   };
+  
 
 
   useEffect(() => {
-    fetch('http://localhost:5000/profissionais')
+    fetch('http://192.168.0.14:5000/profissionais')
       .then((response) => response.json())
       .then((data) => {
-        // Supondo que haja ao menos 2 profissionais na resposta
         setProfissional1(data[0]);
         setProfissional2(data[1]);
         setProfissional3(data[2]);

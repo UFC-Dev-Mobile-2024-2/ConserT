@@ -7,7 +7,7 @@
     ],
     "name": "ConserT",
     "slug": "consert",
-    "version": "1.0.0",
+    "version": "0.2.0",
     "orientation": "portrait",
     "icon": "./assets/images/ct-icon.png",
     "scheme": "myapp",
@@ -17,6 +17,7 @@
       "supportsTablet": true
     },
     "android": {
+      "permissions": ["INTERNET"],
       "adaptiveIcon": {
         "foregroundImage": "./assets/images/ct-icon.png",
         "backgroundColor": "#ffffff"
@@ -33,7 +34,7 @@
       [
         "expo-splash-screen",
         {
-          "image": "./assets/ct-icon.png",
+          "image": "./assets/images/ct-icon.png",
           "imageWidth": 200,
           "resizeMode": "contain",
           "backgroundColor": "#ffffff"
@@ -48,9 +49,9 @@
         "origin": false
       },
       "eas": {
-        "projectId": "46e03eac-9335-4180-b806-1be15d359049"
+        "projectId": "6022395c-98bf-4702-b554-b06ba60ff181"
       }
     },
-    "owner": "hyaza"
+    "owner": "lucasvdsgn"
   }
 }
