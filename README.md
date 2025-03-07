@@ -16,3 +16,9 @@ npx expo start
 
 e em outro terminal execute o seguinte código:
 json-server --watch db.json --port 5000
+
+
+obs: para logar no aplicativo
+
+Login: usuario01@gmail.com
+senha: abcdefg
