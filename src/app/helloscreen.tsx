@@ -39,7 +39,7 @@ const HelloScreen = () => {
         <Text style={styles.buttonText}>Criar conta</Text>
       </TouchableOpacity>
 
-      <TouchableOpacity style={styles.continueWithoutLoginButton}>
+      <TouchableOpacity style={styles.continueWithoutLoginButton} onPress={() => router.push('/homepage')}>
         <Text style={styles.continueText}>Continuar sem login</Text>
       </TouchableOpacity>
     </View>
