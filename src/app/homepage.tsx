@@ -1,5 +1,5 @@
-import React, { useState, useRef } from "react";
-import { View, Text, StyleSheet, TouchableOpacity, ScrollView, Image } from 'react-native';
+import React, { useState, useRef, useEffect } from "react";
+import { View, Text, StyleSheet, TouchableOpacity, ScrollView, Image, ImageSourcePropType  } from 'react-native';
 import { MaterialIcons } from "@expo/vector-icons";
 import { Link } from "expo-router";
 import { Banner } from "../components/horizontal";
@@ -8,11 +8,36 @@ import ProfileCard from "../components/cards/ProfileCard";
 const HomePage = () => {
   const [isDropdownVisible, setDropdownVisible] = useState(false);
   const menuButtonRef = useRef(null);
+  const [profissional1, setProfissional1] = useState<any>(null);
+  const [profissional2, setProfissional2] = useState<any>(null);
+  const [profissional3, setProfissional3] = useState<any>(null);
+  const [profissional4, setProfissional4] = useState<any>(null);
+  const imageMap: { [key: string]: ImageSourcePropType } = {
+    "julio.png": require('../assets/julio.png'),
+    "raimundo.jpg": require('../assets/raimundo.jpg'),
+    "romero.png": require('../assets/romero.png'),
+    "peter.png": require('../assets/peter.png'),
+  };
+
+
 
   const toggleDropdown = () => {
     setDropdownVisible(!isDropdownVisible);
   };
 
+
+  useEffect(() => {
+    fetch('http://localhost:5000/profissionais')
+      .then((response) => response.json())
+      .then((data) => {
+        // Supondo que haja ao menos 2 profissionais na resposta
+        setProfissional1(data[0]);
+        setProfissional2(data[1]);
+        setProfissional3(data[2]);
+        setProfissional4(data[3]);
+      })
+      .catch((error) => console.error('Erro ao buscar dados da API:', error));
+  }, []);
   return (
     <View style={styles.container}>
       {/* Header */}
@@ -26,17 +51,17 @@ const HomePage = () => {
           </Link>
         </TouchableOpacity>
         <TouchableOpacity style={styles.menuButton}>
-          <Link href="/">
+          <Link href="/perfil">
             <MaterialIcons name="person" size={30} color="white" />
           </Link>
         </TouchableOpacity>
       </View>
 
       {/* Dropdown Menu */}
-      {isDropdownVisible && ( 
+      {isDropdownVisible && (
         <View style={styles.dropdownMenu}>
           <TouchableOpacity style={styles.dropdownItem}>
-            <Link href='/'>
+            <Link href='/closedorder'>
               <Text style={styles.dropdownText}>Pedidos Concluídos</Text>
             </Link>
           </TouchableOpacity>
@@ -68,36 +93,72 @@ const HomePage = () => {
 
         {/* Profile Cards */}
         <View style={styles.cardsContainer}>
-          <ProfileCard name="Júlio Cavalcante" image={require("../assets/julio.png")} rating={5} />
-        </View>
+          {profissional1 ? (
+            <ProfileCard
+              key={profissional1.id}
+              name={profissional1.nome}
+              image={imageMap[profissional1.foto] || require('../assets/julio.png')}
+              rating={5}
+            />
+          ) : (
+            <p>Carregando profissional 1...</p>
+          )}
 
-        <View style={styles.cardsContainer}>
-          {/* Outros Conteúdos */}
+          {profissional2 ? (
+            <ProfileCard
+              key={profissional2.id}
+              name={profissional2.nome}
+              image={imageMap[profissional1.foto] || require('../assets/raimundo.jpg')}
+              rating={4}
+            />
+          ) : (
+            <p>Carregando profissional 2...</p>
+          )}
+          {profissional3 ? (
+            <ProfileCard
+              key={profissional3.id}
+              name={profissional3.nome}
+              image={imageMap[profissional1.foto] || require('../assets/romero.png')}
+              rating={2}
+            />
+          ) : (
+            <p>Carregando profissional 3...</p>
+          )}
+          {profissional4 ? (
+            <ProfileCard
+              key={profissional4.id}
+              name={profissional4.nome}
+              image={imageMap[profissional1.foto] || require('../assets/peter.png')}
+              rating={5}
+            />
+          ) : (
+            <p>Carregando profissional 4...</p>
+          )}
         </View>
       </ScrollView>
       {/* Footer */}
-            <View style={styles.footer}>
-              <TouchableOpacity style={styles.footerButton}>
-                <Link href="/homepage">
-                <Image source={require("../assets/home.png")} style={styles.footerIcon} />
-                </Link>
-              </TouchableOpacity>
-              <TouchableOpacity style={styles.footerButton}>
-                <Link href="/">
-                <Image source={require("../assets/message.png")} style={styles.footerIcon} />
-                </Link>          
-              </TouchableOpacity>
-              <TouchableOpacity style={styles.footerButton}>
-                <Link href="/">
-                <Image source={require("../assets/star.png")} style={styles.footerIcon} />
-                </Link>                
-              </TouchableOpacity>
-              <TouchableOpacity style={styles.footerButton}>
-                <Link href="/">
-                <Image source={require("../assets/pro.png")} style={styles.footerProIcon} />
-                </Link>          
-              </TouchableOpacity>
-            </View>
+      <View style={styles.footer}>
+        <TouchableOpacity style={styles.footerButton}>
+          <Link href="/homepage">
+            <Image source={require("../assets/home.png")} style={styles.footerIcon} />
+          </Link>
+        </TouchableOpacity>
+        <TouchableOpacity style={styles.footerButton}>
+          <Link href="/orderscreen">
+            <Image source={require("../assets/message.png")} style={styles.footerIcon} />
+          </Link>
+        </TouchableOpacity>
+        <TouchableOpacity style={styles.footerButton}>
+          <Link href="/avaliacaoservico">
+            <Image source={require("../assets/star.png")} style={styles.footerIcon} />
+          </Link>
+        </TouchableOpacity>
+        <TouchableOpacity style={styles.footerButton}>
+          <Link href="/telapro">
+            <Image source={require("../assets/pro.png")} style={styles.footerProIcon} />
+          </Link>
+        </TouchableOpacity>
+      </View>
     </View>
   );
 };
@@ -137,6 +198,7 @@ const styles = StyleSheet.create({
     paddingTop: 10,
   },
   cardsContainer: {
+    display: 'flex',
     marginTop: 20,
     flexDirection: "row",
     flexWrap: "wrap",

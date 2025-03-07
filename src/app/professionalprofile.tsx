@@ -72,12 +72,12 @@ export default function ProfessionalProfile() {
           </TouchableOpacity>
 
           {/* Botão de contratar */}
-          <TouchableOpacity style={styles.hireButton} onPress={() => router.push('/')}>
+          <TouchableOpacity style={styles.hireButton} onPress={() => router.push('/pedido')}>
             <Text style={styles.hireButtonText}>Contratar</Text>
           </TouchableOpacity>
 
           {/* Botão de avaliações */}
-          <TouchableOpacity style={styles.ratingButton} onPress={() => router.push('/')}>
+          <TouchableOpacity style={styles.ratingButton} onPress={() => router.push('/avaliacaousuario')}>
             <Text style={styles.hireButtonText}>Avaliações</Text>
           </TouchableOpacity>
         </View>

@@ -173,18 +173,18 @@ const styles = StyleSheet.create({
   clientName: {
     fontSize: 18,
     fontWeight: "bold",
-    fontFamily: "Funnel-Display",
+    fontFamily: "Funnel-Display", // Fonte Funnel Display para negrito
   },
   clientLocation: {
     fontSize: 16,
     fontWeight: "bold",
     color: "#555",
-    fontFamily: "Sora-Regular",
+    fontFamily: "Sora-Regular", // Fonte Sora para o restante
   },
   clientAddress: {
     fontSize: 14,
     color: "#777",
-    fontFamily: "Sora-Regular",
+    fontFamily: "Sora-Regular", // Fonte Sora para o restante
   },
   orderCard: {
     alignItems: 'center',
@@ -194,19 +194,19 @@ const styles = StyleSheet.create({
     padding: 16,
     borderRadius: 10,
     elevation: 3,
-    borderWidth: 1,
-    borderColor: "#000",
+    borderWidth: 1,  // Adiciona a borda
+    borderColor: "#000",  // Define a cor da borda como preta
   },
   sliderBackground: {
-    width: "100%",
+    width: "100%", // Agora usa toda a largura disponível
     height: 32,
     backgroundColor: "#E0E0E0",
     borderRadius: 20,
     justifyContent: "center",
     padding: 4,
     marginBottom: 10,
-    borderWidth: 1,
-    borderColor: "#000",
+    borderWidth: 1,  // Adiciona a borda
+    borderColor: "#000",  // Define a cor da borda como preta
   },
   statusContainer: {
     paddingVertical: 4,
@@ -216,19 +216,19 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     flexDirection: "row",
     alignItems: "center",
-    width: 100, 
+    width: 100, // Largura fixa para garantir que o statusContainer não ultrapasse os limites
   },
   status: {
     color: "white",
     fontWeight: "normal",
-    fontSize: 13,
-    fontFamily: "Sora-Regular",
+    fontSize: 13, // Ajuste o tamanho da fonte para caber no espaço
+    fontFamily: "Sora-Regular", // Fonte Sora para o status
   },
   orderDescription: {
     fontSize: 18,
     color: "#333",
     marginBottom: 16,
-    fontFamily: "Sora-Regular",
+    fontFamily: "Sora-Regular", // Fonte Sora para o restante
   },
   completeButton: {
     paddingVertical: 12,
@@ -240,7 +240,7 @@ const styles = StyleSheet.create({
     color: "white",
     fontSize: 16,
     fontWeight: "normal",
-    fontFamily: "Sora-Regular",
+    fontFamily: "Sora-Regular", // Fonte Sora para o restante
   },
   footer: {
     flexDirection: 'row',
