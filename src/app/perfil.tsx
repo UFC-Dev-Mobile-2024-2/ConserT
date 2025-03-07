@@ -57,7 +57,7 @@ export default function Profile() {
         <TouchableOpacity style={styles.headerLogo} onPress={() => router.push("/homepage")}>
           <Image source={require('../assets/logo_blue.png')} style={styles.headerLogo} />
         </TouchableOpacity>
-        <TouchableOpacity style={styles.menuButton} onPress={() => router.push("/")}>
+        <TouchableOpacity style={styles.menuButton}>
           <MaterialIcons name="menu" size={30} color="white" />
         </TouchableOpacity>
       </View>

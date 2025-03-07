@@ -96,7 +96,7 @@ export default function Evaluation() {
 
             {/* Botões abaixo do texto */}
             <View style={styles.buttonContainer}>
-              <TouchableOpacity style={styles.orderButton} onPress={() => router.push("/")}>
+              <TouchableOpacity style={styles.orderButton} onPress={() => router.push("/fila")}>
                 <Text style={styles.buttonText}>Acompanhar Pedido</Text>
               </TouchableOpacity>
               <TouchableOpacity style={styles.homeButton} onPress={() => router.push("/homepage")}>
@@ -112,7 +112,7 @@ export default function Evaluation() {
         <TouchableOpacity style={styles.footerButton} onPress={() => router.push("/homepage")}>
           <Image source={require("../assets/home.png")} style={styles.footerIcon} />
         </TouchableOpacity>
-        <TouchableOpacity style={styles.footerButton} onPress={() => router.push("/")}>
+        <TouchableOpacity style={styles.footerButton} onPress={() => router.push("/avaliacaousuario")}>
           <Image source={require("../assets/message.png")} style={styles.footerIcon} />
         </TouchableOpacity>
         <TouchableOpacity style={styles.footerButton} onPress={() => router.push("/")}>
